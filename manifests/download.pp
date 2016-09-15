@@ -15,13 +15,14 @@ class xhgui::download(
     user     => $user,
   }
 
+  # Disabling this until https://github.com/alcaeus/mongo-php-adapter/issues/30 is fixed
   # Install vendors
-  composer::exec { 'xhgui':
-    cmd       => 'install',
-    cwd       => $dir,
-    user      => $xhgui::params::www_user,
-    scripts   => true,
-    logoutput => on_failure, # So the more detailed Composer error message is shown
-    require   => Vcsrepo[$dir],
-  }
+  #composer::exec { 'xhgui':
+  #  cmd       => 'install',
+  #  cwd       => $dir,
+  #  user      => $xhgui::params::www_user,
+  #  scripts   => true,
+  #  logoutput => on_failure, # So the more detailed Composer error message is shown
+  #  require   => Vcsrepo[$dir],
+  #}
 }
