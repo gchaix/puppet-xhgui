@@ -2,7 +2,7 @@
 class xhgui::download(
   $dir,
   $version,
-  $user       = undef,
+  $user       = $xhgui::params::www_user,
   $repository = 'https://github.com/perftools/xhgui.git'
 ) {
   # Don't use composer create-project, as it doesn't support installing a
